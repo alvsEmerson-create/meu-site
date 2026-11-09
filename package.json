@@ -1,0 +1,16 @@
+{
+  "name": "soldados-socorristas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bash frontend/build.sh",
+    "dev": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "db:init": "wrangler d1 execute soldados-db --remote --file=schema.sql",
+    "test": "node --no-warnings test/api.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
